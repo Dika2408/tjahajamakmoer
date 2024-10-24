@@ -1,8 +1,9 @@
 <template>
 <div>
-    <div class="row justify-content-end">
-        <div class="col-4">
-          <NuxtLink to="../" class="btn btn-danger">BACK</NuxtLink>
+  <div class="row justify-content-end">
+    <nuxt-link href="https://wa.me/62895335051836" class=" text-success bi bi-headset">COSTUMER SERVICE</nuxt-link>
+        <div class="col-3">
+          <NuxtLink to="../" class="btn btn-success">BACK</NuxtLink>
         </div>
     </div>
     <img src="assets/img/download2.jpeg" class="img-thumbnail" alt="150" width="500rem">
@@ -25,7 +26,11 @@
         <div class="col-10">
           <div class="input-group mb-3">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="bi bi-search"></i></button>
-            <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+            <form @submit.prevent="getProduk" class="col mb-3">
+              <div class="input-group flex-nowrap rounded">
+                <input v-model="keyword" type="search" class="form-control" placeholder="Cari Judul..." aria-label="Search" @input="getProduk" />
+              </div>
+            </form>
           </div>
         </div>
         
@@ -42,7 +47,7 @@
       RP:20000
     </div>
     <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-danger rounded-pill"><i class="bi bi-plus-square-fill"></i></span>
+      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA</span>
     </NuxtLink>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -51,7 +56,7 @@
       RP.20000
     </div>
     <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-danger rounded-pill"><i class="bi bi-plus-square-fill"></i></span>
+      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA AA/TETEH</span>
     </NuxtLink>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -60,7 +65,7 @@
       RP.20000
     </div>
     <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-danger rounded-pill"><i class="bi bi-plus-square-fill"></i></span>
+      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA IBU/BAPAK"</span>
     </NuxtLink>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -69,11 +74,19 @@
       Rp.20000
     </div>
     <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-danger rounded-pill"><i class="bi bi-plus-square-fill"></i></span>
+      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA PRESIDEN</span>
+    </NuxtLink>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Kentang g</div>
+      Rp.20000
+      </div>
+      <NuxtLink to="/pembayaran">
+      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA </span>
     </NuxtLink>
   </li>
 </ol>
-  
 </template>
 
 

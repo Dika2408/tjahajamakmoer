@@ -1,4 +1,4 @@
-np<template>
+<template>
   <div>
   <slot/>
   </div>

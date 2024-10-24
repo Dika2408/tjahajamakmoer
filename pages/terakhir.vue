@@ -3,7 +3,7 @@
     <div class="text-center">
       <!-- Coffee logo placeholder -->
       <div class="coffee-logo mb-3">
-        <img src="https://via.placeholder.com/100" alt="Coffee Logo" class="img-fluid">
+        <img src="assets/img/download4.jpeg" alt="Coffee Logo" class="img-fluid">
       </div>
       <!-- Thank You Message -->
       <h2 class="text-white">THANKS YOU!</h2>
