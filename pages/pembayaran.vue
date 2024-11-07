@@ -84,7 +84,7 @@
       <i class="bi bi-star-fill text-warning"></i>
       <i class="bi bi-star-fill text-warning"></i>
       <p class="card-text">
-      nasigoreng adalah nasi yang di goreng
+      Nasi goreng makanan berupa nasi yang digoreng dan dicampur dalam minyak goreng, margarin, atau mentega.
       </p>
       <div class="d-flex justify-content-between align-items-center">
         <div>
@@ -93,7 +93,7 @@
           <strong>Rp. 20.000</strong>
         </div>
       </div>
-      <nuxt-link href="https://wa.me/62" class=" btn btn-success btn-block mt-5 bi bi-whatsapp">Order wa</nuxt-link>
+      <nuxt-link href="https://wa.me/62 " class=" btn btn-success btn-block mt-5 bi bi-whatsapp">Order wa</nuxt-link>
     </div>
   </div>
   <div class="card" style="width: 15rem">
@@ -115,7 +115,8 @@
           <strong>Rp. 20.000</strong>
         </div>
       </div>
-      <nuxt-link href="https://wa.me/62" class=" btn btn-success btn-block mt-5 bi bi-whatsapp">Order wa</nuxt-link>
+      <nuxt-link href="https://wa.me/62" class=" btn btn-success btn-block mt-5 bi bi-whatsapp">ORDER VIA WA</nuxt-link>
+      <nuxt-link href="https://www.instagram.com/warkop.tjahajamakmoer/" class=" btn btn-danger btn-block mt-5 bi bi-instagram">ORDER VIA IG</nuxt-link>
     </div>
   </div>
 </template>

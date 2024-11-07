@@ -1,13 +1,13 @@
 <template>
 <div>
   <div class="row justify-content-end">
-    <nuxt-link href="https://wa.me/62895335051836" class=" text-success bi bi-headset">COSTUMER SERVICE</nuxt-link>
+    <nuxt-link href="https://wa.me/62" class=" text-success bi bi-headset">COSTUMER SERVICE</nuxt-link>
         <div class="col-3">
           <NuxtLink to="../" class="btn btn-success">BACK</NuxtLink>
         </div>
     </div>
     <img src="assets/img/download2.jpeg" class="img-thumbnail" alt="150" width="500rem">
-    <div class="container text-center">
+    <div class="container text-center bg-info">
       <div class="row ">
         <div class="col">
           Hot Coffe
@@ -20,73 +20,49 @@
         </div>
       </div>
     </div>
-</div>
-  
-      <div class="row gap-3 justify-content-center">
+    <div class="row gap-3 justify-content-center">
         <div class="col-10">
           <div class="input-group mb-3">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="bi bi-search"></i></button>
-            <form @submit.prevent="getProduk" class="col mb-3">
-              <div class="input-group flex-nowrap rounded">
-                <input v-model="keyword" type="search" class="form-control" placeholder="Cari Judul..." aria-label="Search" @input="getProduk" />
-              </div>
-            </form>
+            <form @submit.prevent="getProduk" class="row pt-5 d-flex justify-content-center">
+                    <div class="col-lg-10">
+                        <input v-model="keyword" type="search" class="form-control form-control-md rounded-5" name="cari-produk" id="cari-produk" placeholder="Mau pesank apa hari ini?" autocomplete="off">
+                    </div>
+                </form>
           </div>
         </div>
-        
       </div>
-      
+    <div class="container">
+      <div class="row" v-for="item in items" :key="item.id">
+        <div class="card mb-2" style="width: 15rem">
+          <img :src="item.foto" class="img-thumbnail" alt="Coffee Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ item.nama }}</h5>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <p class="card-text">
+              {{ item.deskripsi}}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+              </div>
+              <div class="price">
+                <strong>Rp. {{ item.harga }}</strong>
+              </div>
+            </div>
+            <nuxt-link href="https://wa.me/62" class=" btn btn-success btn-block mt-5 bi bi-whatsapp">Order wa</nuxt-link>
+          </div>
+        </div>
+       
+      </div> 
+    </div> 
+</div>
   
-    <ul v-for="item in items" :key="item.id">
-      <li>{{ item.nama }}</li>
-    </ul>
-    <ol class="list-group list-group-numbered">
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">Americano</div>
-      RP:20000
-    </div>
-    <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA</span>
-    </NuxtLink>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">Cappucino</div>
-      RP.20000
-    </div>
-    <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA AA/TETEH</span>
-    </NuxtLink>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">Pisang Goreng</div>
-      RP.20000
-    </div>
-    <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA IBU/BAPAK"</span>
-    </NuxtLink>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">Nasi Goreng</div>
-      Rp.20000
-    </div>
-    <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA PRESIDEN</span>
-    </NuxtLink>
-  </li>
-  <li class="list-group-item d-flex justify-content-between align-items-start">
-    <div class="ms-2 me-auto">
-      <div class="fw-bold">Kentang g</div>
-      Rp.20000
-      </div>
-      <NuxtLink to="/pembayaran">
-      <span class="badge text-bg-success rounded-pill"><i class="bi bi-whatsapp"></i>KLIK DISINI YA </span>
-    </NuxtLink>
-  </li>
-</ol>
+      
+    
 </template>
 
 
@@ -97,7 +73,7 @@ const items = ref([])
 async function getProduk() {
   let { data, error } = await supabase
   .from('produk')
-  .select('*')
+  .select()
   if(data) {
     items.value = data
   }

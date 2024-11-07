@@ -18,11 +18,12 @@
       </div>
     </div>
     <div class="row">
+      
       <img src="assets/img/tjahajamamkmoer.jpeg"class="w-100 mb-4 rounded-lg">
     </div>
     <div class="row justify-content-center">
       <div class="col-4">
-        <NuxtLink to="/pemesanan"class="Order btn btn-warning  ">Order Now</NuxtLink>
+        <NuxtLink to="/pemesanan"class="Order btn btn-success  ">Order Now</NuxtLink>
       </div>
     </div>
   </div>
